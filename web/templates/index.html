@@ -1,0 +1,133 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="body_center">
+    <div id="splash_screen">
+        <div id="title_splash_screen">
+            <div>
+                <p class="text_splash_screen" style="margin-top: 2em;color: #FF8A56;">Masha Zyryanova</p>
+                <p class="text_splash_screen" style="filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25)); color: #000000;">junior programmer</p>
+            </div>
+            <p class="text_small">Привет! Я Маша, начинающий программист.<br>
+                А тут вы можете узнать обо мне и о моих pet-проектах!</p>
+            <ul style="margin-top: 10%; display: -webkit-box; padding: 10px;">
+                <li><a id="button_contact" href="#contact">Контакты</a></li>
+                <li><a id="button_cv" href="https://docs.google.com/document/d/1K3TdME3rd-0BHGeI4xVviMnQ11oQm4HUsyyA1TwWUk4/edit?usp=sharing">
+                    Смотреть CV<img style="padding-left: 0.6rem " src="../static/image/arrow.svg"></img></a></li>
+            </ul>
+
+        </div>
+        <img style="flex-grow: 5" class="my_photo" src="../static/image/my_photo.jpg" alt="my photo">
+    </div>
+</div>
+
+    <div id="block_about" name="about">
+        <p id="title_about">About</p>
+        <p id="text_about">Я делаю свои проекты и познаю удивительный мир программирования.
+            Мой основной язык разработки — Python. Расширяю свой кругозор и пробую новые языки и фреймворки.
+            Планирую стать профессионалом в будущем!</p>
+    </div>
+
+    <div id="block_projects" name="proj">
+        <div style="margin-bottom: 8%">
+            <div>
+                <p id="title_projects">PROJECTS</p>
+                <p id="slogan">I bring results.<br>My pet-projects.</p>
+            </div>
+            <a id="button_view_all_proj" href="/all_proj">Смотреть все проекты</a>
+        </div>
+
+
+    <div class="slider">
+        <div class="slider__container">
+            <div class="slider__wrapper">
+                <div class="slider__items">
+                    {% for proj in projects %}
+                    <div class="slider__item">
+                        <!-- Контент 1 слайда -->
+                        <div class="slider__item-content">
+                            <img class="slider__content_img" src="../static/storage/img/{{ proj.image }}" alt="..." width="350" height="250">
+                            <div style="background: #fff">
+                                <h2 class="slider__content_title">{{ proj.title }}</h2>
+                                <p class="slider__project_name">{{ proj.preview }}</p>
+                                <div class="slider__content_footer">
+                                    <a href="{{ proj.link }}" class="slider__card_button">Смотреть<img style="padding-left: 0.6rem " src="../static/image/arrow.svg"></img></a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                {% endfor %}
+                </div>
+            </div>
+        </div>
+        <!-- Кнопки для перехода к предыдущему и следующему слайду -->
+
+        <a href="#" class="slider__control" data-slide="prev"></a>
+        <a href="#" class="slider__control" data-slide="next"></a>
+    </div>
+</div>
+
+<div id="block_publications">
+
+    <div style="display: flex;  flex-flow: row nowrap;">
+        <div style="flex-grow: 2;">
+            <p id="title_pub">Publications</p>
+            <p id="latest_pub">Последнии</p>
+            <a id="button_view_all_pub" href="/all_pub">Смотреть все<img style="padding-left: 0.6rem " src="../static/image/arrow_white.svg"></img></a>
+        </div>
+        <div style="flex-grow: 8;">
+            {% for pub in publications %}
+                <div class="card_pub">
+                    <p class="card_date">{{ pub.date.date() }}</p>
+                    <p class="card_name">{{ pub.title }}</p>
+                    <a href="{{ pub.link }}" class="card_button">Читать...<img style="padding-left: 0.6rem " src="../static/image/arrow_white.svg"></img></a>
+                    <hr>
+                </div>
+            {% endfor %}
+
+        </div>
+    </div>
+
+</div>
+<div id="contact"></div>
+<div id="block_ed_aw" style="background:  linear-gradient(0deg, rgb(28, 40, 255), rgb(255, 163, 66))">
+    <hr style="color: #fff; padding: 2px;">
+    <div  class="social-icons contact" style="justify-content: center; list-style: none; margin: 5% 0">
+        <div><a class="social-icon-github contact-icon" href="https://github.com/MariaZyryanova72" title="..." target="_blank" rel="noopener"></a></div>
+        <div><a class="social-icon-inst contact-icon" href="https://www.instagram.com/" title="..." target="_blank" rel="noopener"></a></div>
+        <div><a class="social-icon-vk contact-icon" href="https://vk.com/maxa_progy" title="..." target="_blank" rel="noopener"></a></div>
+        <div><a class="social-icon-telegram contact-icon" href="https://t.me/mariyazz" title="..." target="_blank" rel="noopener"></a></div>
+        <div><a class="social-icon-youtube contact-icon" href="https://www.youtube.com/channel/UCJFKWtzvC1n3UhXBtsvevmw" title="..." target="_blank" rel="noopener"></a></div>
+    </div>
+    <hr style="color: #fff; padding: 2px;margin-bottom: 10%;">
+    <div id="ed_aw">
+        <div style="flex-grow: 5;padding: 0 5%">
+            <p class="text_column_ed_aw">📚 Education</p>
+            {%  for education in educations %}
+                <div class="card_ed_aw">
+                    <p class="name_ed col-xs-10 col-sm-9 col-9">{{ education.title }}</p>
+                    <p class="text_period col-xs-10 col-sm-2 col-2">• {{ education.period }}</p>
+                    <a class="col-xs-6 col-sm-1 col-1" href="{{ education.link }}"><img width="24px" src="../static/image/arrow_white_href.svg"></a>
+                </div>
+                <hr style="color: #fff; padding: 2px">
+            {% endfor %}
+        </div>
+
+        <div style="flex-grow: 5;padding: 0 5%">
+            <p class="text_column_ed_aw">💼 Awards</p>
+            {%  for award in educations %}
+                <div class="card_ed_aw">
+                    <p class="name_ed col-xs-10 col-sm-9 col-9">{{ award.title }}</p>
+                    <p class="text_period col-xs-10 col-sm-2 col-2">• {{ award.period }}</p>
+                    <a class="col-xs-6 col-sm-1 col-1" href="{{ award.link }}"><img width="24px" src="../static/image/arrow_white_href.svg"></a>
+                </div>
+                <hr style="color: #fff; padding: 2px">
+            {% endfor %}
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}
+
+

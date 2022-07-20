@@ -1,0 +1,8 @@
+{% extends 'admin/base.html' %}
+{% block access_control  %}
+    {% if current_user.is_authenticated %}
+        <div class="btn-group btn-primary pull-right">
+            <a style="color: #fff" class="btn" href="{{ url_for('admin.logout') }}">Log out</a>
+        </div>
+    {% endif %}
+{% endblock %}

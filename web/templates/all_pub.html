@@ -1,0 +1,20 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="body_center" style="
+    background:  linear-gradient(0deg, rgb(28, 40, 255), rgb(255, 163, 66));
+     text-align: center;
+     padding-top: 5%;
+">
+       {% for pub in publications %}
+            <div class="card_pub" style="text-align: left;">
+                <p class="card_date">{{ pub.date.date() }}</p>
+                <p class="card_name">{{ pub.title }}</p>
+                <a href="{{ pub.link }}" class="card_button">Read the article<img style="padding-left: 0.6rem " src="../static/image/arrow_white.svg"></img></a>
+                <hr style="color: #fff; padding: 2px">
+            </div>
+        {% endfor %}
+     </div>
+
+{% endblock %}
+

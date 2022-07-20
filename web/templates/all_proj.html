@@ -1,0 +1,29 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="body_center" style="
+    background:  linear-gradient(0deg, rgb(28, 40, 255), rgb(255, 163, 66));
+     text-align: center;
+     padding-top: 5%;
+">
+        {% for proj in projects %}
+            <div class="slider__item container__item">
+                <!-- Контент 1 слайда -->
+                <div class="slider__item-content">
+                    <img class="slider__content_img" src="../static/storage/img/{{ proj.image }}" alt="..." width="350" height="250">
+                    <div style="background: #fff">
+                        <h2 class="slider__content_title">{{ proj.title }}</h2>
+                        <p class="slider__project_name">{{ proj.preview }}</p>
+                        <div class="slider__content_footer">
+                            <a href="{{ proj.link }}" class="slider__card_button" style="margin-top: 20%">View Project<img style="padding-left: 0.6rem " src="../static/image/arrow.svg"></img></a>
+
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+
+{% endblock %}
+
