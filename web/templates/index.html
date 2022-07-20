@@ -70,12 +70,11 @@
 <div id="block_publications">
 
     <div style="display: flex;  flex-flow: row nowrap;">
-        <div style="flex-grow: 2;">
+        <div style="flex-grow: 1;">
             <p id="title_pub">Publications</p>
-            <p id="latest_pub">Последнии</p>
             <a id="button_view_all_pub" href="/all_pub">Смотреть все<img style="padding-left: 0.6rem " src="../static/image/arrow_white.svg"></img></a>
         </div>
-        <div style="flex-grow: 8;">
+        <div style="flex-grow:9;">
             {% for pub in publications %}
                 <div class="card_pub">
                     <p class="card_date">{{ pub.date.date() }}</p>

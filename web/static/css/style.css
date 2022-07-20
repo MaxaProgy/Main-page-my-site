@@ -327,7 +327,7 @@ header {
 
 #block_publications {
     background-color: #000000;
-    padding: 0 10% 10%;
+    padding: 10% 10%;
 }
 
 #button_view_all_pub {
@@ -339,15 +339,6 @@ header {
     color: #FFFFFF;
 }
 
-#latest_pub {
-    font-family: 'Roboto';
-    font-style: normal;
-    font-weight: 700;
-    font-size: 54px;
-    line-height: 59px;
-    letter-spacing: 1px;
-    color: #FFFFFF;
-}
 
 #title_pub {
     font-family: 'Roboto';
@@ -532,7 +523,7 @@ hr {
     display: flex;
     padding: 0 32px;
     color: #616161;
-    margin-bottom: 33%;
+    margin-bottom: 10%;
 }
 .slider__card_button  {
     font-family: 'Roboto';
@@ -681,7 +672,7 @@ footer {
         padding: 0 10%;
     }
     #block_publications {
-        padding: 0 10% 3%;
+        padding: 10% 3%;
     }
     #block_ed_aw {
         padding: 4% 10%;
@@ -696,7 +687,7 @@ footer {
         padding: 0 7%;
     }
     #block_publications {
-        padding: 0 7% 7%;
+        padding: 7% 7%;
     }
     #block_ed_aw {
         padding: 4% 7%;
@@ -711,7 +702,7 @@ footer {
         padding: 0 4%;
     }
     #block_publications {
-        padding: 0 4% 4%;
+        padding: 4% 4%;
     }
     #block_ed_aw {
         padding: 4%;
@@ -829,11 +820,6 @@ footer {
     .text_column_ed_aw {
         font-size: 24px;
     }
-
-    #latest_pub {
-        font-size: 32px;
-    }
-
     #title_pub {
         font-size: 16px;
     }
