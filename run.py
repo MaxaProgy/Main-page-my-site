@@ -42,7 +42,7 @@ class AdminMainView(AdminIndexView):
                 return self.render('admin/signup.html', legend='Регистрация', message='Такой пользователь существует')
 
             user = User(
-                is_admin=True,
+                is_admin=False,
                 email=email,
                 password=password
             )
