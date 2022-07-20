@@ -81,6 +81,7 @@ class Education(db.Model):
     title = db.Column(db.String, nullable=False)
     period = db.Column(db.String, nullable=False)
     link = db.Column(db.String, nullable=False)
+    date = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
         return '<Education %r>' % self.id
@@ -94,6 +95,7 @@ class Award(db.Model):
     title = db.Column(db.String, nullable=False)
     period = db.Column(db.String, nullable=False)
     link = db.Column(db.String, nullable=False)
+    date = db.Column(db.DateTime, default=datetime.utcnow)
 
     def __repr__(self):
         return '<Award %r>' % self.id

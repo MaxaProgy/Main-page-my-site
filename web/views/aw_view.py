@@ -20,13 +20,14 @@ class AwView(ModelView):
         'title': 'Название',
         'period': 'Дата получения',
         'link': 'Ссылка',
+        'date': 'Дата публикации',
         'last_ed': 'Дата последнего редактирования'
     }
     # Список отображаемых колонок
-    column_list = ['id', 'title', 'period', 'link', 'last_ed']
+    column_list = ['id', 'title', 'period', 'link', 'date', 'last_ed']
 
     column_default_sort = ('title', True)
-    column_sortable_list = ('id', 'title', 'period', 'link')
+    column_sortable_list = ('id', 'title', 'period', 'link', 'date')
 
     can_create = True
     can_edit = True
@@ -40,7 +41,7 @@ class AwView(ModelView):
     }
 
     column_searchable_list = ['title', 'period']
-    column_editable_list = ['title', 'period', 'link']
+    column_editable_list = ['title', 'period', 'link', 'date']
 
     create_modal = True
     edit_modal = True

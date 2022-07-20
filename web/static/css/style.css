@@ -420,6 +420,10 @@ hr {
     color: #fff;
 }
 
+.btn_all_aw_ed:hover {
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.5));
+}
+
 .text_period {
     font-family: 'Roboto';
     font-style: normal;

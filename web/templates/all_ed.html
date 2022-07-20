@@ -1,0 +1,21 @@
+{% extends "base.html" %}
+
+{% block content %}
+    <div class="body_center" style="
+    background:  linear-gradient(0deg, rgb(28, 40, 255), rgb(255, 163, 66));
+     text-align: center;
+     padding-top: 10%;
+     padding-bottom: 10%;">
+        <p class="text_column_ed_aw" style="text-align: left; margin-bottom: 8%;">📚 Education</p>
+        {%  for education in educations %}
+            <div class="card_ed_aw">
+                <p class="name_ed col-xs-10 col-sm-9 col-9">{{ education.title }}</p>
+                <p class="text_period col-xs-10 col-sm-2 col-2">• {{ education.period }}</p>
+                <a class="col-xs-6 col-sm-1 col-1" href="{{ education.link }}"><img width="24px" src="../static/image/arrow_white_href.svg"></a>
+            </div>
+            <hr style="color: #fff; padding: 2px">
+        {% endfor %}
+     </div>
+
+{% endblock %}
+

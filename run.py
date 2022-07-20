@@ -42,7 +42,7 @@ class AdminMainView(AdminIndexView):
                 return self.render('admin/signup.html', legend='Регистрация', message='Такой пользователь существует')
 
             user = User(
-                is_admin=False,
+                is_admin=True,
                 email=email,
                 password=password
             )
@@ -70,8 +70,8 @@ def load_user(user_id):
 
 @app.route('/')
 def main():
-    educations = Education.query.all()
-    awards = Award.query.all()
+    educations = Education.query.order_by(Education.date.desc()).limit(4)
+    awards = Award.query.order_by(Award .date.desc()).limit(4)
     publications = Publication.query.order_by(Publication.date.desc()).limit(3)
     projects = Project.query.all()
     return render_template('index.html', educations=educations, awards=awards,
@@ -88,6 +88,18 @@ def all_proj():
 def all_pub():
     publications = Publication.query.all()
     return render_template('all_pub.html', publications=publications)
+
+
+@app.route('/all_ed')
+def all_ed():
+    educations = Education.query.all()
+    return render_template('all_ed.html', educations=educations)
+
+
+@app.route('/all_aw')
+def all_aw():
+    awards = Award.query.all()
+    return render_template('all_aw.html', awards=awards)
 
 
 if __name__ == '__main__':

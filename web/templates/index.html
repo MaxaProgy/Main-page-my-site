@@ -110,11 +110,15 @@
                 </div>
                 <hr style="color: #fff; padding: 2px">
             {% endfor %}
+            <a href="/all_ed">
+                <div class="btn_all_aw_ed card_ed_aw name_ed" style="text-align: center; display:block;">Смотреть все</div>
+            </a>
+            <hr style="color: #fff; padding: 2px">
         </div>
 
         <div style="flex-grow: 5;padding: 0 5%">
             <p class="text_column_ed_aw">💼 Awards</p>
-            {%  for award in educations %}
+            {%  for award in awards %}
                 <div class="card_ed_aw">
                     <p class="name_ed col-xs-10 col-sm-9 col-9">{{ award.title }}</p>
                     <p class="text_period col-xs-10 col-sm-2 col-2">• {{ award.period }}</p>
@@ -122,6 +126,10 @@
                 </div>
                 <hr style="color: #fff; padding: 2px">
             {% endfor %}
+            <a href="/all_aw">
+                <div class="btn_all_aw_ed card_ed_aw name_ed" style="text-align: center; display:block;">Смотреть все</div>
+            </a>
+            <hr style="color: #fff; padding: 2px">
         </div>
     </div>
 
