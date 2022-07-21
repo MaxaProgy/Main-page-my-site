@@ -1,6 +1,6 @@
 import os
 
-SQLALCHEMY_DATABASE_URI = 'sqlite:///app_db.sqlite'
+SQLALCHEMY_DATABASE_URI = 'sqlite:///db/app_db.sqlite'
 SQLALCHEMY_TRACK_MODIFICATIONS = True
 SECRET_KEY = os.urandom(20)
 FLASK_ADMIN_SWATCH = 'cosmo'
