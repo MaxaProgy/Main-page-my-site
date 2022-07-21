@@ -1,5 +1,7 @@
+import os
+
 from web import db, create_app, login_manager
-from flask import url_for, redirect, request, render_template
+from flask import url_for, redirect, request, render_template, send_from_directory
 from flask_admin import expose, AdminIndexView
 from flask_login import current_user, login_user, logout_user
 from models import Education, User, Award, Publication, Project
@@ -42,7 +44,7 @@ class AdminMainView(AdminIndexView):
                 return self.render('admin/signup.html', legend='Регистрация', message='Такой пользователь существует')
 
             user = User(
-                is_admin=True,
+                is_admin=False,
                 email=email,
                 password=password
             )
@@ -105,4 +107,4 @@ def all_aw():
 if __name__ == '__main__':
     with app.app_context():
         db.create_all()
-        app.run(debug=True, port=5001)
+        app.run(debug=True,  host='0.0.0.0', port=5001)

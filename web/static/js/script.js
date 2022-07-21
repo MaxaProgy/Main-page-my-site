@@ -1,4 +1,13 @@
 window.addEventListener("load", function() {
+    let date = new Date().getFullYear();
+    let year = "";
+    if (date > 2022) {
+        year = " - " + date;
+    }
+    document.getElementById("copyright").innerHTML = "© 2022 "+ year + " by M@x@_progy(Зырянова Мария) " +
+        "                                                Сайт-портфолио<br>\n" +
+        "                We love our users!💙";
+
     // Функциональность прокрутки
     $(window).scroll( () => {
         var windowTop = $(window).scrollTop();
