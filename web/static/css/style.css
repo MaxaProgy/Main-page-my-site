@@ -513,9 +513,10 @@ hr {
     font-family: 'Roboto';
     font-style: normal;
     font-weight: 700;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 26px;
     color: #000000;
+    text-align: left;
     background:#fff;
     white-space: normal;
     padding: 0 32px;
@@ -539,7 +540,7 @@ hr {
     color: #000000;
     background: #fff;
     white-space: normal;
-    margin-top: 8%;
+    margin-top: 20%;
     height: 52px;
 }
 
@@ -677,7 +678,7 @@ footer {
         padding: 0 10%;
     }
     #block_publications {
-        padding: 10% 3%;
+        padding: 10%;
     }
     #block_ed_aw {
         padding: 4% 10%;
@@ -692,7 +693,7 @@ footer {
         padding: 0 7%;
     }
     #block_publications {
-        padding: 7% 7%;
+        padding: 7%;
     }
     #block_ed_aw {
         padding: 4% 7%;
@@ -707,7 +708,7 @@ footer {
         padding: 0 4%;
     }
     #block_publications {
-        padding: 4% 4%;
+        padding: 4%;
     }
     #block_ed_aw {
         padding: 4%;
